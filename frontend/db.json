@@ -1,0 +1,36 @@
+{
+ "prodcategory": [
+    {
+      "img": "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/1862801/2018/2/9/11518155061506-Roadster-Men-Maroon--Navy-Blue-Regular-Fit-Checked-Casual-Shirt-8861518155061131-1.jpg",
+      "category" : "shirt"
+    },
+    {
+      "img": "https://rukminim2.flixcart.com/image/612/612/kfoapow0-0/trouser/v/x/5/38-t-130-trouser-baleno-black-aa-ad-av-original-imafw2jugbuxmnq9.jpeg",
+      "category":"pants"
+      
+    },
+    {
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqq4dC8UYW_z-UWbasX9GEDD0vgxlrwjUihg&usqp=CAU",
+      "category":"jackets"
+      
+    },
+    {
+      "img":" https://wholetex.sgp1.cdn.digitaloceanspaces.com/full/outlook-vol-29-heavy-art-silk-kurta-pajama-4554.jpg",
+      "category":"kurta"
+      
+    },
+    {
+      "img": "https://www.suitsexpert.com/wp-content/uploads/2019/11/best-suit-brands-cover-scaled.jpg",
+      "category": "suits"
+    },
+    {
+      "img": "https://static.fibre2fashion.com/MemberResources/LeadResources/1/2022/5/Buyer/22202899/Images/22202899_0_denim-jeans.jpg",
+      "category":"jeans"
+      
+    },
+    {
+      "img": "https://assets.ajio.com/medias/sys_master/root/20220121/8pKF/61ea5b4baeb2695cdd24612b/-473Wx593H-461592493-multi-MODEL.jpg",
+      "category":"tshirt"
+    }
+ ]
+}
