@@ -74,16 +74,21 @@ res.cookie("token",null,{
 
     //get reset password token
     const resetToken = user.getResetPasswordToken()
+    
 
     await user.save({ valideBeforeSave :false})
 
     const resetPasswordUrl = `${req.protocol}://${req.get("host")}/api/v1/password/reset/${resetToken}`
+    
     const message = `your password reset link is :- \n\n ${resetPasswordUrl} \n\n if you have not requested it kindly ignore it `
+    //console.log(message);
     try{
       await sendEmail({
             email:user.email,
             subject:`password recovery`,
-            message
+            message:message,
+            
+            
       }); 
       res.status(200).json({
         success:true,
@@ -93,7 +98,9 @@ res.cookie("token",null,{
     catch(err){
         user.resetPasswordToken= undefined;
         user.resetPasswordExpire = undefined;
+        
         await user.save({valideBeforeSave:false})
+        console.log(err.message)
         return next(new ErrorHandler(err.message,500))
     }
  })
