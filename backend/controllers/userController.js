@@ -10,6 +10,8 @@ const crypto = require("crypto")
 
 //register user
 
+
+
 exports.registerUser = catchAsyncErrors(async(req,res,next)=>{
     const {name,email,password} = req.body;
 
@@ -31,20 +33,32 @@ exports.registerUser = catchAsyncErrors(async(req,res,next)=>{
 
     const {email,password}=req.body
 
+    
+    
+
     if(!email || !password){
         return next( new ErrorHandler("please Enter email and password",400))
     }
 
     const user = await User.findOne({email}).select("+password")
-
+    
+    
     if(!user){
         return next( new ErrorHandler("Invalid user or password",401))
     }
 
-    const isPasswordMatched = user.comparePassword(password);
+    
+    const isPasswordMatched = await user.comparePassword(password);
+    
+    
+    
+    
+    
     if(!isPasswordMatched){
         return next( new ErrorHandler("Invalid user or password",401))
     }
+
+    
 
    sendToken(user,200,res)
  })
@@ -101,7 +115,6 @@ res.cookie("token",null,{
         user.resetPasswordExpire = undefined;
         
         await user.save({valideBeforeSave:false})
-        console.log(err.message)
         return next(new ErrorHandler(err.message,500))
     }
  })
