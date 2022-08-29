@@ -261,6 +261,7 @@ const user = await User.findById(req.params.id);
 await user.remove();
 
     res.status(200).json({
-        success:true
+        success:true,
+        message:"user deleted successfully"
     })
  });
