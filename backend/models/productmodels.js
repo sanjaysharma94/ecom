@@ -4,7 +4,7 @@ const productSchema = new mongoose.Schema({
     name : { type:String, required: [true, "please Enter product name"], trim: true},
     description  : { type:String, required: [true, "please Enter product description"]},
     price : { type:Number, required: [true, "please Enter product price"], maxlength :[6, "price cannot exced 8 digits"]},
-    rating : { type:Number, default:0 },
+    ratings : { type:Number, default:0 },
     images :[
         {
             public_id:{ type: String , required:true},
