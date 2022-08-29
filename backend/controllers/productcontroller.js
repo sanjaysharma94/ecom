@@ -76,3 +76,25 @@ exports.getSingleProduct = catchAsyncErrors(async(req,res,next) =>{
         
     })
 });
+
+
+// create new review or update the review
+exports.createProductReview = catchAsyncErrors(async(req,res,next) =>{
+        const review = {
+            user:req.user._id,
+            name:req.user.name,
+            rating:Number(req.body.rating),
+            comment : req.body.comment,
+            
+        }
+
+        const product = await Product.findById(req.body.productId);
+
+        if(isReviewed){
+            
+        }
+        else {
+            product.review.push(review)
+        }
+})
+
