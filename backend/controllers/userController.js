@@ -222,4 +222,27 @@ res.cookie("token",null,{
         success:true,
         user,
     })
-})
+});
+
+
+// update user profile  by admin eg:- role
+
+exports.updateProfile = catchAsyncErrors(async(req,res,next)=>{
+    
+    const newUserData = {
+        name: req.body.name,
+        email: req.body.email,
+        role:req.body.role,
+    }
+
+    // we will add cluodinary later 
+
+    const user = await User.findByIdAndUpdate(req.user.id,newUserData,{new:true,
+        runValidators:true,
+        useFindAndModify:false 
+        })
+
+    res.status(200).json({
+        success:true
+    })
+ });
