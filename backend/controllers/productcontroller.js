@@ -112,9 +112,7 @@ exports.createProductReview = catchAsyncErrors(async(req,res,next) =>{
             avg += rev.rating
         })/product.reviews.length
 
-        await product.save({
-            validateBeforeSave:false,
-        })
+        await product.save({ validateBeforeSave:false});
 
         res.status(200).json({
             success:true,
