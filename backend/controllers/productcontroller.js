@@ -122,3 +122,20 @@ exports.createProductReview = catchAsyncErrors(async(req,res,next) =>{
         });
 });
 
+
+// get all reviews of a single product
+
+exports.getProductReviews = catchAsyncErrors(async(req,res,next) =>{
+
+    const product = await Product.findById(req.query.id);
+
+    if(!product){
+        return next(new ErrorHandler("product not found", 404));
+    }
+
+    res.status(200).json({
+        success:true,
+        reviews:product.reviews
+    });
+});
+
