@@ -12,10 +12,10 @@ const orderSchema = new mongoose.Schema({
     },
     orderItems:[
        {
-         name:{type:string, required:true},
+         name:{type:String, required:true},
          price:{type:Number, required:true} ,
          quantity:{type:Number, required:true} ,
-         image:{type:Number, required:true} ,
+         image:{type:String, required:true} ,
          product:{type:mongoose.Schema.ObjectId , ref: "product", required:true}
 
         }
@@ -27,8 +27,8 @@ const orderSchema = new mongoose.Schema({
     },
 
     paymentInfo:{
-        id:{type:string, required:true},
-        status:{type:string, required:true}
+        id:{type:String, required:true},
+        status:{type:String, required:true}
     },
 
     paidAt:{
@@ -36,7 +36,7 @@ const orderSchema = new mongoose.Schema({
         required:true
     },
 
-    itemPrice:{
+    itemsPrice:{
         type:Number, default:0,
         required:true
     },
