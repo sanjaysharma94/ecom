@@ -129,7 +129,7 @@ exports.updateOrder = catchAsyncErrors( async(req,res,next) =>{
     
 // Delete single order -- Admin
 
-exports.getSingleOrder = catchAsyncErrors(async(req,res,next) =>{
+exports.deleteOrder = catchAsyncErrors(async(req,res,next) =>{
     const order = await Order.findById(req.params.id)
 
     if(!order){
@@ -138,7 +138,7 @@ exports.getSingleOrder = catchAsyncErrors(async(req,res,next) =>{
  
      }
      await order.remove();
-     
+
     res.status(200).json({
         success:true, 
     })
