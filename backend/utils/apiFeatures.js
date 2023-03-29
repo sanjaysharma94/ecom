@@ -19,7 +19,7 @@ class ApiFeatures {
     filter(){
         const querycopy = {...this.querystr};
         
-        const removefeilds = ["keyword", "page", "lomit"];
+        const removefeilds = ["keyword", "page", "limit"];
         removefeilds.forEach((key)=>delete querycopy[key])
 
         let querystr =  JSON.stringify(querycopy);
